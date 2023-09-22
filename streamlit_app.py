@@ -40,3 +40,29 @@ def main():
 
 if __name__ == "__main__":
     main()
+import streamlit as st
+from datetime import datetime
+
+def get_lucky_color(today):
+    hour = today.hour
+
+    if 6 <= hour < 12:
+        return "赤"
+    elif 12 <= hour < 18:
+        return "黄色"
+    else:
+        return "青"
+
+def main():
+    today = datetime.now()
+    lucky_color = get_lucky_color(today)
+
+    st.title("今日のラッキーカラー")
+
+    button = st.button("今日のラッキーカラーを表示")
+
+    if button:
+        st.write("今日のラッキーカラーは、" + lucky_color + "です。")
+
+if __name__ == "__main__":
+    main()
