@@ -23,3 +23,20 @@ def main():
 
 if __name__ == "__main__":
     main()
+import streamlit as st
+
+def main():
+    today = datetime.now()
+    lucky_color = get_lucky_color(today)
+
+    st.title("今日のラッキーカラー")
+
+    # ボタンを作成
+    button = st.button("今日のラッキーカラーを表示")
+
+    # ボタンが押されたらラッキーカラーを表示
+    if button:
+        st.write("今日のラッキーカラーは、" + lucky_color + "です。")
+
+if __name__ == "__main__":
+    main()    
